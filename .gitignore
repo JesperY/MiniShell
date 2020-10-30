@@ -1,0 +1,7 @@
+# linux c++ ignore
+# only .cpp and .h
+/*
+!.gitignore
+!*.cpp
+!*.h
+
