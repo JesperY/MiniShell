@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include "ClassInit.h"
+#include "Order.h"
 
 using namespace std;
 
@@ -7,6 +9,8 @@ int main()
 {
 	
 	string strInput;
+	string orderName;
+	string strParams;
 	while(1)
 	{
 		cout << "\033[1;32mMiniShell> \033[0m";
@@ -22,7 +26,6 @@ int main()
 			cout << "Input Nothing" << endl;
 			continue;
 		}
-		cout << strInput << endl;
 
 		//strInput包括命令名与命令参数，以空格分隔
 
@@ -30,8 +33,8 @@ int main()
 
 		if(firstSpaceIndex != -1)//若不存在空格，则没有参数或输入错误
 		{
-			string orderName = strInput.substr(0, firstSpaceIndex);//获得命令名
-			string strParams = strInput.substr(firstSpaceIndex + 1);//获得参数字符串
+			orderName = strInput.substr(0, firstSpaceIndex);//获得命令名
+			strParams = strInput.substr(firstSpaceIndex + 1);//获得参数字符串
 
 			/*
 			根据orderName调用对应的命令，并传递参数字符串
@@ -39,9 +42,15 @@ int main()
 		}
 		else
 		{
+			orderName = strInput;
+			//cout << "orderName=" << orderName << endl;
+			Order* order = ClassInit::init(orderName);
+			if(order != NULL)
+				order->run();
 			/*
 			调用没有参数的命令
 			*/
+			
 		}
 	}
 
