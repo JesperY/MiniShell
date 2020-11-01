@@ -9,22 +9,37 @@ using namespace std;
 所有的命令实现都继承自Order类，同时该文件中需包含所有的派生类头文件
 */
 
-
-/*
-此部分用于创建带参数的命令对象
-记得将头文件一并取消注释
-
+//带参数命令
 Order* ClassInit::init(string orderName, string params)
 {
-    //switch
-	Order order = NULL;
+	if(orderName.empty())
+	{
+		cout << "faild: command is NULL";
+		return NULL;
+	}
+	Order *order = NULL;
+	/*
+	if(orderName.compare("") == 0)
+	{
+		order = new ;
+	}
+	else
+	{
+		cout << orderName << " :No such command" << endl;
+	}
+	*/
 	return order;
 }
-*/
 
 //无参数命令
 Order* ClassInit::init(string orderName)
 {
+	if(orderName.empty())
+	{
+		cout << "faild: command is NULL";
+		return NULL;
+	}
+	
 	Order *order = NULL;
 	
 	/*
@@ -37,7 +52,7 @@ Order* ClassInit::init(string orderName)
 	}
 	else
 	{
-		cout << orderName << " :No such order" << endl;
+		cout << orderName << " :No such command" << endl;
 	}
 
 	return order;

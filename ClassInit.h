@@ -10,7 +10,7 @@ class ClassInit
 {
 	public:
 
-		//static Order* init(string orderName, string params);
+		static Order* init(string orderName, string params);
 
 		static Order* init(string orderName);
 

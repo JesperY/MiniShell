@@ -38,6 +38,11 @@ int main()
 
 			/*
 			根据orderName调用对应的命令，并传递参数字符串
+			
+			Order* order = ClassInit::init(orderName, strParams);
+			if(order != NULL)
+				order->run();
+
 			*/
 		}
 		else
@@ -47,7 +52,6 @@ int main()
 			Order* order = ClassInit::init(orderName);
 			if(order != NULL)
 				order->run();
-
 			/*
 			调用没有参数的命令
 			*/
