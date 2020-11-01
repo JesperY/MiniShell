@@ -1,6 +1,7 @@
 #include "ClassInit.h"
 #include "PWD.h"
 #include "Order.h"
+#include "CD.h"
 #include <iostream>
 
 using namespace std;
@@ -18,16 +19,16 @@ Order* ClassInit::init(string orderName, string params)
 		return NULL;
 	}
 	Order *order = NULL;
-	/*
-	if(orderName.compare("") == 0)
+	
+	if(orderName.compare("cd") == 0)
 	{
-		order = new ;
+		order = new CD(params);
 	}
 	else
 	{
 		cout << orderName << " :No such command" << endl;
 	}
-	*/
+	
 	return order;
 }
 
