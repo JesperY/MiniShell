@@ -43,10 +43,11 @@ int main()
 		else
 		{
 			orderName = strInput;
-			//cout << "orderName=" << orderName << endl;
+		
 			Order* order = ClassInit::init(orderName);
 			if(order != NULL)
 				order->run();
+
 			/*
 			调用没有参数的命令
 			*/

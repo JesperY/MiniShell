@@ -9,7 +9,7 @@ MiniShell.o : MiniShell.cpp
 ClassInit.o : ClassInit.h Order.h PWD.h
 	g++ -c ClassInit.cpp -Wall
 
-PWD.o : PWD.h PWD.cpp Order.h
+PWD.o : PWD.h Order.h
 	g++ -c PWD.cpp -Wall
 
 

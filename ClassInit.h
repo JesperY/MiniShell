@@ -2,8 +2,6 @@
 #define CLASSINIT_H
 
 #include <string>
-#include <iostream>
-#include "PWD.h"
 #include "Order.h"
 
 using namespace std;
