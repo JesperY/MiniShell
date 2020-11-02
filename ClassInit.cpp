@@ -1,6 +1,7 @@
 #include "ClassInit.h"
 #include "PWD.h"
 #include "Order.h"
+#include "MKDIR.h"
 #include <iostream>
 
 using namespace std;
@@ -18,6 +19,16 @@ Order* ClassInit::init(string orderName, string params)
 		return NULL;
 	}
 	Order *order = NULL;
+
+	if(orderName.compare("mkdir") == 0)
+	{
+		order = new MKDIR();
+	}
+	else
+	{
+		cout<< orderName << " :No such command" << endl;
+	}
+
 	/*
 	if(orderName.compare("") == 0)
 	{
