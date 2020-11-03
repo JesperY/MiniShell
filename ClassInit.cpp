@@ -2,6 +2,7 @@
 #include "PWD.h"
 #include "Order.h"
 #include "MKDIR.h"
+#include "CD.h"
 #include <iostream>
 
 using namespace std;
@@ -22,23 +23,17 @@ Order* ClassInit::init(string orderName, string params)
 
 	if(orderName.compare("mkdir") == 0)
 	{
-		order = new MKDIR();
+		order = new MKDIR(params);
 	}
-	else
+	else if(orderName.compare("cd") == 0)
 	{
-		cout<< orderName << " :No such command" << endl;
-	}
-
-	/*
-	if(orderName.compare("") == 0)
-	{
-		order = new ;
+		order = new CD(params);
 	}
 	else
 	{
 		cout << orderName << " :No such command" << endl;
 	}
-	*/
+	
 	return order;
 }
 

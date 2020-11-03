@@ -2,6 +2,7 @@
 #include <string>
 #include "ClassInit.h"
 #include "Order.h"
+#include <unistd.h>
 
 using namespace std;
 
@@ -13,7 +14,7 @@ int main()
 	string strParams;
 	while(1)
 	{
-		cout << "\033[1;32mMiniShell> \033[0m";
+		cout << "\033[1;32mMiniShell@" << getcwd(NULL, NULL) << "> \033[0m";
 		getline(cin, strInput);
 
 		/*
@@ -35,6 +36,10 @@ int main()
 		{
 			orderName = strInput.substr(0, firstSpaceIndex);//获得命令名
 			strParams = strInput.substr(firstSpaceIndex + 1);//获得参数字符串
+			
+			Order * order = ClassInit::init(orderName, strParams);
+			if(order != NULL)
+				order->run();
 
 			/*
 			根据orderName调用对应的命令，并传递参数字符串

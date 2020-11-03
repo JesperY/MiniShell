@@ -10,30 +10,21 @@ bool MKDIR :: checkParams()
     return true;
 }
 
+MKDIR :: MKDIR(string params)
+{
+	dir = params;
+	cout<<dir<<endl;
+}
+
 int MKDIR :: run()
 {
-    string argv[1]="test";
 
-    if(argc != 2) //argcÎª²ÎÊý¸öÊý
-    {
-        cout<<"mkdir failed"<<endl;
-        exit(0);
-    }
-
-    if(mkdir(argv[1],O_CREAT|0600) == -1) //argv[1]ÎªÊäÈëµÄÎÄ¼þÄ¿Â¼Ãû³Æ
-                                                                    //o_createÎªÄ¿Â¼²»´æÔÚÔò´´½¨£¬0600±íÊ¾ÐÂ½¨ÎÄ¼þ¼ÐµÄÈ¨ÏÞ
+    if(mkdir(dir,O_CREAT|0600) == -1) //dir¿¿¿¿¿¿
+                                      //O_CREAT¿¿¿¿¿¿¿¿¿¿¿0600¿¿¿¿¿¿¿¿¿¿¿¿
     {
             perror("mkdir error");
     }
+    cout<<"¿¿¿mkdir"<<endl;
 }
 
-void MKDIR :: print(string s)
-{
-    cout<<s<<endl;
-}
-
-void MKDIR ::  print(char *s)
-{
-    cout<<s<<endl;
-}
 

@@ -1,4 +1,6 @@
-objects = MiniShell.o ClassInit.o PWD.o WHO.o
+
+objects = MiniShell.o ClassInit.o PWD.o CD.o WHO.o
+
 
 MiniShell : $(objects)
 	g++ -o MiniShell $(objects) -Wall
@@ -14,6 +16,10 @@ PWD.o : PWD.h Order.h
 
 MKDIR.o : MKDIR.h Order.h
 	g++ -c MKDIR.cpp -Wall
+
+CD.0 : CD.h Order.h
+	g++ -c CD.cpp -Wall
+
 
 
 

@@ -2,10 +2,12 @@
 #define MKDIR_H
 #include<unistd.h>
 #include"Order.h"
+#include<cstring>
 
 class MKDIR: public Order
 {
     public:
+	    MKDIR(string params);
         bool checkParams();
         int run();
         void print(string s);
@@ -14,6 +16,7 @@ class MKDIR: public Order
     protected:
 
     private:
+        string dir;
 };
 
 #endif // MKDIR_H
