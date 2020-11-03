@@ -13,13 +13,13 @@ class Order
 
 	public:
 		
-		virtual bool checkParams() = 0;
+		virtual bool checkParams(){return true;}
 
-		virtual int run() = 0;
+		virtual void run() = 0;
 
-		void print(string s);
+		//void print(string s);
 
-		void print(char* s);
+		//void print(char* s);
 };
 
 #endif

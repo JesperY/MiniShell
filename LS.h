@@ -1,24 +1,21 @@
-#ifndef CD_H
-#define CD_H
-
+#ifndef LS_H
+#define LS_H
 #include <string>
 #include "Order.h"
 
 using namespace std;
 
-class CD:public Order
+class LS: public Order
 {
 	private:
 
 		string path;
 
 	public:
-		
-		CD();
-		
-		CD(string params);
+	
+		LS();
 
-		bool checkParams();
+		LS(string params);
 
 		void run();
 };

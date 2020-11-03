@@ -23,6 +23,7 @@ bool CD::checkParams()
 		cout << "faild: command is NULL" << endl;
 		return false;
 	}
+	return true;
 
 	/*
 		可使用stat判断目标路径的文件类型
@@ -30,11 +31,11 @@ bool CD::checkParams()
 	
 }
 
-int CD::run()
+void CD::run()
 {
 	if(chdir(path.c_str()) != 0)//使用chdir改变工作路径
 	{
 		cout << "faild: path is not correct" << endl;
 	}
-	cout << getcwd(NULL, NULL) << endl;
+	cout << getcwd(NULL, 0) << endl;
 }

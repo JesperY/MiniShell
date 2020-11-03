@@ -14,7 +14,7 @@ int main()
 	string strParams;
 	while(1)
 	{
-		cout << "\033[1;32mMiniShell@" << getcwd(NULL, NULL) << "> \033[0m";
+		cout << "\033[1;32mMiniShell@" << getcwd(NULL, 0) << "> \033[0m";
 		getline(cin, strInput);
 
 		/*

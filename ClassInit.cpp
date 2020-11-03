@@ -3,6 +3,7 @@
 #include "Order.h"
 #include "MKDIR.h"
 #include "CD.h"
+#include "LS.h"
 #include <iostream>
 
 using namespace std;
@@ -29,6 +30,10 @@ Order* ClassInit::init(string orderName, string params)
 	{
 		order = new CD(params);
 	}
+	else if(orderName.compare("ls") == 0)
+	{
+		order = new LS(params);
+	}	
 	else
 	{
 		cout << orderName << " :No such command" << endl;
@@ -55,6 +60,14 @@ Order* ClassInit::init(string orderName)
 	if(orderName.compare("pwd") == 0)
 	{
 		order = new PWD();
+	}
+	else if(orderName.compare("ls") == 0)
+	{	
+		order = new LS();
+	}
+	else if(orderName.compare("who" == 0))
+	{
+		order = new WHO();
 	}
 	else
 	{

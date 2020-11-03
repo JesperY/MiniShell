@@ -16,13 +16,13 @@ class PWD: public Order
 		string strWD;
 	public:
 
-		bool checkParams();
+		//bool checkParams();
 	
-		int run();
+		void run();
 	
-		void print(string s);
+		//void print(string s);
 
-		void print(char *s);
+		//void print(char *s);
 
 };
 
