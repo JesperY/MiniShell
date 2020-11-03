@@ -1,6 +1,7 @@
 #include "ClassInit.h"
 #include "PWD.h"
 #include "Order.h"
+#include "MKDIR.h"
 #include "CD.h"
 #include "LS.h"
 #include <iostream>
@@ -20,8 +21,12 @@ Order* ClassInit::init(string orderName, string params)
 		return NULL;
 	}
 	Order *order = NULL;
-	
-	if(orderName.compare("cd") == 0)
+
+	if(orderName.compare("mkdir") == 0)
+	{
+		order = new MKDIR(params);
+	}
+	else if(orderName.compare("cd") == 0)
 	{
 		order = new CD(params);
 	}
@@ -60,6 +65,12 @@ Order* ClassInit::init(string orderName)
 	{	
 		order = new LS();
 	}
+	/*
+	else if(orderName.compare("who" == 0))
+	{
+		order = new WHO();
+	}
+	*/
 	else
 	{
 		cout << orderName << " :No such command" << endl;
