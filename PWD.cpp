@@ -3,27 +3,28 @@
 
 using namespace std;
 
-
+/*
 bool PWD::checkParams()
 {
 	return true;
 }
+*/
 
 
-
-int PWD::run()
+void PWD::run()
 {
 	if((buff = getcwd(NULL, 0)) == NULL)
 	{
-		print("ERROR: pwd faild");
+		//print("ERROR: pwd faild");
+		cout << "ERROR: pwd faild" << endl;
 	}
 	else
 	{
-		print(buff);
+		//print(buff);
+		cout << buff << endl;
 	}
-	return 0;
 }
-
+/*
 void PWD::print(string s)
 {
 	cout << s << endl;
@@ -34,4 +35,4 @@ void PWD::print(char* s)
 	cout << s << endl;
 }
 
-
+*/
