@@ -65,10 +65,12 @@ Order* ClassInit::init(string orderName)
 	{	
 		order = new LS();
 	}
+	/*
 	else if(orderName.compare("who" == 0))
 	{
 		order = new WHO();
 	}
+	*/
 	else
 	{
 		cout << orderName << " :No such command" << endl;
