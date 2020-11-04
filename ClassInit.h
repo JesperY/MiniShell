@@ -14,6 +14,8 @@ class ClassInit
 
 		static Order* init(string orderName);
 
+		static string trim(string strParms);
+
 		//static Order* init(char* orderName);
 
 		//static Order* init(char* orderName, char* params);

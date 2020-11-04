@@ -12,12 +12,11 @@ class LS: public Order
 		string path;
 
 	public:
-	
+					
 		LS();
 
 		LS(string params);
 
 		void run();
 };
-
 #endif

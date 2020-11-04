@@ -20,7 +20,7 @@ void  MKDIR::run()
     if(mkdir(dir.c_str(),O_CREAT|0600) == -1) //dir¿¿¿¿¿¿
                                       //O_CREAT¿¿¿¿¿¿¿¿¿¿¿0600¿¿¿¿¿¿¿¿¿¿¿¿
     {
-            perror("mkdir error");
+            //perror("mkdir error");
     }
     cout<<"¿¿¿mkdir"<<endl;
 }

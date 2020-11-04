@@ -2,6 +2,7 @@
 #define ORDER_H
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -13,7 +14,16 @@ class Order
 
 	public:
 		
-		virtual bool checkParams(){return true;}
+		virtual bool checkParams(string strParams)
+		{
+			if(strParams.empty())
+			{
+				cout << "too few arguments" << endl;
+				return false;
+			}
+
+			return true;
+		}
 
 		virtual void run() = 0;
 

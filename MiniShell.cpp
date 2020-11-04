@@ -3,6 +3,7 @@
 #include "ClassInit.h"
 #include "Order.h"
 #include <unistd.h>
+#include <cstdio>
 
 using namespace std;
 
@@ -16,6 +17,8 @@ int main()
 	{
 		cout << "\033[1;32mMiniShell@" << getcwd(NULL, 0) << "> \033[0m";
 		getline(cin, strInput);
+		//char str[1024];
+		//fgets(str, 1024, stdin);
 
 		/*
 			使用getche()实现命令输入时的退格操作
@@ -29,13 +32,14 @@ int main()
 		}
 
 		//strInput包括命令名与命令参数，以空格分隔
-
+		
+		strInput = ClassInit::trim(strInput);//去除开头与结尾的多余空格
 		int firstSpaceIndex = strInput.find_first_of(' ');//寻找第一个空格
 
 		if(firstSpaceIndex != -1)//若不存在空格，则没有参数或输入错误
 		{
 			orderName = strInput.substr(0, firstSpaceIndex);//获得命令名
-			strParams = strInput.substr(firstSpaceIndex + 1);//获得参数字符串
+			strParams = ClassInit::trim(strInput.substr(firstSpaceIndex + 1));//获得参数字符串
 			
 			Order * order = ClassInit::init(orderName, strParams);
 			if(order != NULL)
