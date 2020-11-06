@@ -1,4 +1,5 @@
-objects = MiniShell.o ClassInit.o PWD.o CD.o LS.o MKDIR.o CAT.o WHOAMI.o
+
+objects = MiniShell.o ClassInit.o PWD.o CD.o LS.o MKDIR.o MV.o RM.o CAT.o WHOAMI.o
 
 MiniShell : $(objects)
 	g++ -o MiniShell $(objects) -Wall
@@ -27,8 +28,13 @@ CAT.o : CAT.h Order.h
 WHOANI.o : WHO.h Order.h
 	g++ -c WHOAMI.cpp -wall
 
+MV.o : MV.h Order.h
+	g++ -c MV.cpp -Wall
+
+RM.o : RM.h Order.h
+	g++ -c RM.cpp -Wall
 
 
 .PHONY : clean
 clean : 
-	-rm -f $(objects) *.h.gch
+	-rm -f $(objects)

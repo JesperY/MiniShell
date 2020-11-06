@@ -30,7 +30,7 @@ void LS::run()
 
 	struct dirent* ent = NULL;
 	
-	int count = 1;//FIXUP
+	int count = 0;//FIXUP
 	while((ent = readdir(dir)) )
 	{
 
@@ -41,7 +41,7 @@ void LS::run()
 			*/
 		if( ent->d_type == 4 && ent->d_name[0] != '.')//目录文件
 		{
-			cout << "\033[34m" << ent->d_name << " ";
+			cout << "\033[34m" << ent->d_name << "\033[0m" << " ";
 			count++;
 		}
 		else if(ent->d_type == 8 && ent->d_name[0] != '.')//常规文件
@@ -50,10 +50,9 @@ void LS::run()
 			count++;
 		}
 
-		if(count % 5 == 0)
-			cout << endl;
-
-		
+		if(count % 5 == 0 && count != 0)
+		;
+			//cout << endl;		
 
 	}
 	cout << endl;

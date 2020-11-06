@@ -6,6 +6,8 @@
 #include "LS.h"
 #include "CAT.h"
 #include "WHOAMI.h"
+#include "MV.h"
+#include "RM.h"
 #include <iostream>
 
 using namespace std;
@@ -40,6 +42,14 @@ Order* ClassInit::init(string orderName, string params)
 	{
 		order =new CAT(params);
 	}	
+	else if(orderName.compare("mv") == 0)
+	{
+		order = new MV(params);
+	}
+	else if(orderName.compare("rm") == 0)
+	{
+		order = new RM(params);
+	}
 	else
 	{
 		cout << orderName << " :No such command" << endl;
@@ -87,6 +97,20 @@ Order* ClassInit::init(string orderName)
 	}
 
 	return order;
+}
+
+/*
+* 此方法用于删除传入字符串两边的多余空格
+*/
+string ClassInit::trim(string strParams)
+{
+	if(strParams.empty())
+		return strParams;
+	
+	strParams.erase(0, strParams.find_first_not_of(" "));
+	strParams.erase(strParams.find_last_not_of(" ") + 1);
+
+	return strParams;
 }
 
 /*
