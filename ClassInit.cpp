@@ -4,6 +4,8 @@
 #include "MKDIR.h"
 #include "CD.h"
 #include "LS.h"
+#include "CAT.h"
+#include "WHOAMI.h"
 #include <iostream>
 
 using namespace std;
@@ -33,6 +35,10 @@ Order* ClassInit::init(string orderName, string params)
 	else if(orderName.compare("ls") == 0)
 	{
 		order = new LS(params);
+	}
+	else if(orderName.compare("cat") == 0)
+	{
+		order =new CAT(params);
 	}	
 	else
 	{
@@ -64,6 +70,10 @@ Order* ClassInit::init(string orderName)
 	else if(orderName.compare("ls") == 0)
 	{	
 		order = new LS();
+	}
+	else if(orderName.compare("whoami") == 0)
+	{
+		order = new WHOAMI();
 	}
 	/*
 	else if(orderName.compare("who" == 0))
