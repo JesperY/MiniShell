@@ -4,8 +4,12 @@
 #include "MKDIR.h"
 #include "CD.h"
 #include "LS.h"
+#include "CAT.h"
+#include "WHOAMI.h"
 #include "MV.h"
 #include "RM.h"
+#include "DIFF.h"
+#include "WC.h"
 #include "CP.h"
 #include <iostream>
 
@@ -37,6 +41,10 @@ Order* ClassInit::init(string orderName, string params)
 	{
 		order = new LS(params);
 	}
+	else if(orderName.compare("cat") == 0)
+	{
+		order =new CAT(params);
+	}	
 	else if(orderName.compare("mv") == 0)
 	{
 		order = new MV(params);
@@ -44,6 +52,14 @@ Order* ClassInit::init(string orderName, string params)
 	else if(orderName.compare("rm") == 0)
 	{
 		order = new RM(params);
+	}
+	else if(orderName.compare("diff") == 0)
+	{
+		order =new DIFF(params);
+	}
+	else if(orderName.compare("wc") == 0)
+	{
+		order = new WC(params);
 	}
 	else if(orderName.compare("cp") == 0)
 	{
@@ -79,6 +95,10 @@ Order* ClassInit::init(string orderName)
 	else if(orderName.compare("ls") == 0)
 	{	
 		order = new LS();
+	}
+	else if(orderName.compare("whoami") == 0)
+	{
+		order = new WHOAMI();
 	}
 	/*
 	else if(orderName.compare("who" == 0))
