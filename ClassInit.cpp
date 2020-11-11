@@ -8,6 +8,8 @@
 #include "WHOAMI.h"
 #include "MV.h"
 #include "RM.h"
+#include "DIFF.h"
+#include "WC.h"
 #include <iostream>
 
 using namespace std;
@@ -49,6 +51,14 @@ Order* ClassInit::init(string orderName, string params)
 	else if(orderName.compare("rm") == 0)
 	{
 		order = new RM(params);
+	}
+	else if(orderName.compare("diff") == 0)
+	{
+		order =new DIFF(params);
+	}
+	else if(orderName.compare("wc") == 0)
+	{
+		order = new WC(params);
 	}
 	else
 	{
