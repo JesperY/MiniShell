@@ -6,6 +6,7 @@
 #include "LS.h"
 #include "MV.h"
 #include "RM.h"
+#include "CP.h"
 #include <iostream>
 
 using namespace std;
@@ -43,6 +44,10 @@ Order* ClassInit::init(string orderName, string params)
 	else if(orderName.compare("rm") == 0)
 	{
 		order = new RM(params);
+	}
+	else if(orderName.compare("cp") == 0)
+	{
+		order = new CP(params);
 	}
 	else
 	{

@@ -13,9 +13,11 @@ MV::MV(string strParams)
 
 bool MV::splitParams(string strParams)
 {		
+	//去除路径参数两边的多余空格
 	source = ClassInit::trim(strParams.substr(0, strParams.find_first_of(" ")));
 	target = ClassInit::trim(strParams.substr(strParams.find_first_of(" ") + 1));
 
+	//判断参数是否为空
 	if(source.empty() || target.empty())
 		return false;
 
@@ -24,6 +26,7 @@ bool MV::splitParams(string strParams)
 
 void MV::run()
 {
+	
 	if(!splitParams(source_target))
 	{
 		cout << "arguments not match" << endl;

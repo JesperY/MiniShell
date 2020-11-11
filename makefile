@@ -1,4 +1,4 @@
-objects = MiniShell.o ClassInit.o PWD.o CD.o LS.o MKDIR.o MV.o RM.o
+objects = MiniShell.o ClassInit.o PWD.o CD.o LS.o MKDIR.o MV.o RM.o	CP.o
 
 MiniShell : $(objects)
 	g++ -o MiniShell $(objects) -Wall
@@ -26,6 +26,9 @@ MV.o : MV.h Order.h
 
 RM.o : RM.h Order.h
 	g++ -c RM.cpp -Wall
+
+CP.o : CP.h Order.h
+	g++ -c CP.cpp -Wall
 
 
 .PHONY : clean
