@@ -10,6 +10,7 @@
 #include "RM.h"
 #include "DIFF.h"
 #include "WC.h"
+#include "CP.h"
 #include <iostream>
 
 using namespace std;
@@ -59,6 +60,10 @@ Order* ClassInit::init(string orderName, string params)
 	else if(orderName.compare("wc") == 0)
 	{
 		order = new WC(params);
+	}
+	else if(orderName.compare("cp") == 0)
+	{
+		order = new CP(params);
 	}
 	else
 	{
