@@ -39,8 +39,8 @@ void DIFF :: run()
 	splitParams(str, source, target);
 
 	ifstream op1, op2;
-	op1.open(source);
-	op2.open(target);
+	op1.open(source.c_str());
+	op2.open(target.c_str());
 
 	bool same=true;
 	while(getline(op1,ans) && getline(op2,ans2))

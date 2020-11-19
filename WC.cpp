@@ -30,7 +30,7 @@ void WC :: run()
 	string ans;
 	
 	ifstream op;
-	op.open(file);
+	op.open(file.c_str());
 
 	while(getline(op,ans))
 	{
