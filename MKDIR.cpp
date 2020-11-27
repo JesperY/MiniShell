@@ -20,7 +20,7 @@ void  MKDIR::run()
     {
             //perror("mkdir error");
     }
-    cout<<"¿¿¿mkdir"<<endl;
+    //cout<<"¿¿¿mkdir"<<endl;
 }
 
 
